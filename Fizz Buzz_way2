@@ -1,0 +1,25 @@
+char **fizzBuzz(int n, int* returnSize){
+    *returnSize = n;
+    char** ans = (char**)malloc(n*sizeof(char*));
+    for(int i = 1; i <= n; i++)
+    {
+        ans[i-1] = (char*)malloc(15*sizeof(char));
+        if(i % 3 == 0 && i % 5 == 0)
+        {            
+            strcpy(ans[i-1], "FizzBuzz");
+        }
+        else if(i % 5 == 0)
+        {
+            strcpy(ans[i-1], "Buzz");
+        }
+        else if(i % 3 == 0)
+        {
+            strcpy(ans[i-1], "Fizz");
+        }
+        else
+        {
+            sprintf(ans[i-1], "%d", i);
+        }        
+    }    
+    return ans;
+}
